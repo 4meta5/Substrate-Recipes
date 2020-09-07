@@ -4,11 +4,9 @@ on:
   pull_request:
     branches:
     - master
-    - develop
   push:
     branches:
     - master
-    - develop
 
 jobs:
   test-code:
@@ -41,8 +39,5 @@ jobs:
     - name: Run clippy
       run: cargo +nightly-2020-05-07 clippy -- -D warnings
 
-    - name: Check Kitchen
-      run: cargo check --all
-
-    - name: Test Kitchen
+    - name: Run Tests
       run: cargo test --all

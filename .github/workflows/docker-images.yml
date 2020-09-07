@@ -1,0 +1,77 @@
+name: Build and Publish Docker Images
+
+on:
+  # TODO consider doing this only when a tag is pushed.
+  push:
+    branches:
+    - master
+  #TODO Remove this, it's just for testing
+  pull_request:
+    branches:
+    - master
+
+jobs:
+  build-publish:
+    if: ${{ github.repository == 'substrate-developer-hub/recipes' }}
+    runs-on: ubuntu-18.04
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Install toolchain
+      uses: actions-rs/toolchain@v1
+      with:
+        profile: minimal
+        toolchain: nightly-2020-05-07
+        target: wasm32-unknown-unknown
+        override: true
+        default: true
+
+    - name: Build it all
+      run: cargo build --release
+
+    - name: Clean huge target directory
+      run: rm -r target/release/deps target/release/wbuild
+
+    - uses: docker/build-push-action@v1
+      with:
+        username: ${{ secrets.DOCKER_USERNAME_1 }}
+        password: ${{ secrets.DOCKER_PASSWORD_1 }}
+        dockerfile: nodes/basic-pow/Dockerfile
+        repository: joshyorndorff/recipes-basic-pow
+        tags: latest
+        add_git_labels: true
+        tag_with_ref: true
+        tag_with_sha: true
+
+    - uses: docker/build-push-action@v1
+      with:
+        username: ${{ secrets.DOCKER_USERNAME_1 }}
+        password: ${{ secrets.DOCKER_PASSWORD_1 }}
+        dockerfile: nodes/hybrid-consensus/Dockerfile
+        repository: joshyorndorff/recipes-hybrid-consensus
+        tags: latest
+        add_git_labels: true
+        tag_with_ref: true
+        tag_with_sha: true
+
+    - uses: docker/build-push-action@v1
+      with:
+        username: ${{ secrets.DOCKER_USERNAME_1 }}
+        password: ${{ secrets.DOCKER_PASSWORD_1 }}
+        dockerfile: nodes/kitchen-node/Dockerfile
+        repository: joshyorndorff/recipes-kitchen-node
+        tags: latest
+        add_git_labels: true
+        tag_with_ref: true
+        tag_with_sha: true
+
+    - uses: docker/build-push-action@v1
+      with:
+        username: ${{ secrets.DOCKER_USERNAME_1 }}
+        password: ${{ secrets.DOCKER_PASSWORD_1 }}
+        dockerfile: nodes/rpc-node/Dockerfile
+        repository: joshyorndorff/recipes-rpc-node
+        tags: latest
+        add_git_labels: true
+        tag_with_ref: true
+        tag_with_sha: true
