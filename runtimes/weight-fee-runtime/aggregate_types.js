@@ -13,6 +13,7 @@ const pallets = [
 // Types that are native to the runtime itself (ie come from lib.rs)
 // These specifics are from https://polkadot.js.org/api/start/types.extend.html#impact-on-extrinsics
 const runtimeOwnTypes = {
+  "AccountInfo": "AccountInfoWithTripleRefCount",
   "Address": "AccountId",
   "LookupSource": "AccountId"
 }
