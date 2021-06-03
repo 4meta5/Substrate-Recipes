@@ -9,11 +9,11 @@ use sc_service::{error::Error as ServiceError, Configuration, PartialComponents,
 use sha3pow::*;
 use sp_api::TransactionFor;
 use sp_consensus::import_queue::BasicQueue;
+use sp_core::{Encode, U256};
 use sp_inherents::InherentDataProviders;
 use std::sync::Arc;
-use std::time::Duration;
 use std::thread;
-use sp_core::{U256, Encode};
+use std::time::Duration;
 
 // Our native executor instance.
 native_executor_instance!(

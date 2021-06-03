@@ -18,7 +18,7 @@ use frame_system::{
 		SignedPayload, Signer, SigningTypes, SubmitTransaction,
 	},
 };
-use sp_core::{crypto::KeyTypeId};
+use sp_core::crypto::KeyTypeId;
 use sp_io::offchain_index;
 use sp_runtime::{
 	offchain as rt_offchain,
@@ -297,7 +297,9 @@ impl<T: Config> Module<T> {
 
 	fn derived_key(block_number: T::BlockNumber) -> Vec<u8> {
 		block_number.using_encoded(|encoded_bn| {
-			ONCHAIN_TX_KEY.clone().into_iter()
+			ONCHAIN_TX_KEY
+				.clone()
+				.into_iter()
 				.chain(b"/".into_iter())
 				.chain(encoded_bn)
 				.copied()
@@ -512,7 +514,7 @@ impl<T: Config> frame_support::unsigned::ValidateUnsigned for Module<T> {
 					return InvalidTransaction::BadProof.into();
 				}
 				valid_tx(b"submit_number_unsigned_with_signed_payload".to_vec())
-			},
+			}
 
 			_ => InvalidTransaction::Call.into(),
 		}

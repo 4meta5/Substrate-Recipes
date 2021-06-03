@@ -14,11 +14,11 @@ will teach us many useful aspects of dealing with consensus and prepare us to un
 advanced consensus engines in the future. In particular we will learn about:
 
 -   Substrate's
-    [`BlockImport` trait](https://substrate.dev/rustdocs/v3.0.0/sp_consensus/block_import/trait.BlockImport.html)
+	[`BlockImport` trait](https://substrate.dev/rustdocs/v3.0.0/sp_consensus/block_import/trait.BlockImport.html)
 -   Substrate's [import pipeline](https://substrate.dev/rustdocs/v3.0.0/sp_consensus/import_queue/index.html)
 -   Structure of a typical [Substrate Service](https://substrate.dev/rustdocs/v3.0.0/sc_service/index.html)
 -   Configuration of
-    [`InherentDataProvider`](https://substrate.dev/rustdocs/v3.0.0/sp_authorship/struct.InherentDataProvider.html)s
+	[`InherentDataProvider`](https://substrate.dev/rustdocs/v3.0.0/sp_authorship/struct.InherentDataProvider.html)s
 
 ## The Structure of a Node
 

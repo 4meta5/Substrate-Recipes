@@ -8,10 +8,10 @@ use sc_service::{error::Error as ServiceError, Configuration, PartialComponents,
 use sha3pow::*;
 use sp_api::TransactionFor;
 use sp_consensus::import_queue::BasicQueue;
+use sp_core::{Encode, U256};
 use sp_inherents::InherentDataProviders;
-use std::{sync::Arc, time::Duration};
 use std::thread;
-use sp_core::{U256, Encode};
+use std::{sync::Arc, time::Duration};
 
 // Our native executor instance.
 native_executor_instance!(
@@ -195,7 +195,7 @@ pub fn new_full(config: Configuration) -> Result<TaskManager, ServiceError> {
 		task_manager
 			.spawn_essential_handle()
 			.spawn_blocking("pow", worker_task);
-		
+
 		// Start Mining
 		let mut nonce: U256 = U256::from(0);
 		thread::spawn(move || loop {

@@ -1,12 +1,12 @@
 {
-  "name": "sum-storage",
-  "version": "1.0.0",
-  "description": "Example of using Polkadot-js API to query custom rpc",
-  "main": "index.js",
-  "author": "Joshy Orndorff",
-  "license": "GPL-3.0-or-later",
-  "private": false,
-  "dependencies": {
-    "@polkadot/api": "^4.4.1"
-  }
+	"name": "sum-storage",
+	"version": "1.0.0",
+	"description": "Example of using Polkadot-js API to query custom rpc",
+	"main": "index.js",
+	"author": "Joshy Orndorff",
+	"license": "GPL-3.0-or-later",
+	"private": false,
+	"dependencies": {
+		"@polkadot/api": "^4.4.1"
+	}
 }

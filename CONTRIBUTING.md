@@ -18,19 +18,19 @@ report new issues at https://github.com/substrate-developer-hub/recipes/issues. 
 issue, please inlcude the following information.
 
 -   **Short summary of the issue encountered** - In a sentence or two explain what the issue is at a
-    high level.
+	high level.
 -   **What recipe has the issue** - You may specify the recipe by name (e.g. "Basic PoW Node"),
-    directory (eg. `/nodes/basic-pow`), or GitHub link (eg.
-    https://github.com/substrate-developer-hub/recipes/tree/master/nodes/basic-pow). Other
-    unambiguous ways of specifying the particular recipe are also acceptable (e.g. crates.io link,
-    or rendered text link).
+	directory (eg. `/nodes/basic-pow`), or GitHub link (eg.
+	https://github.com/substrate-developer-hub/recipes/tree/master/nodes/basic-pow). Other
+	unambiguous ways of specifying the particular recipe are also acceptable (e.g. crates.io link,
+	or rendered text link).
 -   **Steps to reproduce** - What actions did you take to notice the issue? Did you submit a
-    particular extrinsic? Did you compile the code a particular way? What command did you run the
-    node with?
+	particular extrinsic? Did you compile the code a particular way? What command did you run the
+	node with?
 -   **Expected Behavior** - What were you expecting to happen when you encountered the bug?
 -   **Observed Behavior** - What actually happened when you encountered the bug?
 -   **Additional Relevant Information** - What error message did you receive? What OS and rust
-    compiler are you using?
+	compiler are you using?
 
 ## Proposing Changes and Additions
 
@@ -48,11 +48,11 @@ started. All of these ideas and more are listed in our
 [issue queue](https://github.com/substrate-developer-hub/recipes/issues)
 
 -   **Test Coverage** - Not all code is covered, and not all covered code is covered well, but we
-    would like more and better coverage.
+	would like more and better coverage.
 -   **New recipes** - If you know how to do something useful in Substrate that is not yet covered in
-    the Recipes, please contribute.
+	the Recipes, please contribute.
 -   **UX improvements** - Any way to make it easier and less confusing to get new users onboarded is
-    welcome.
+	welcome.
 -   **CI Improvements** - The more tests we have automated, the higher quality the Recipes will be.
 
 ## Style
@@ -80,5 +80,5 @@ No standards for language style are enforced aside from the common English spell
 -   Avoid using "we", "our", "you" because it often is conducive to unnecessary language
 -   Prefer active voice ("you may want to use active voice" `=>` "use active voice")
 -   Link as often as possible to outside content and useful resources including other recipes,
-    knowledge base, tutorials, Wikipedia, and 3rd party content. It is not necessary to re-link the
-    same external resource on subsequent mentions in a single document.
+	knowledge base, tutorials, Wikipedia, and 3rd party content. It is not necessary to re-link the
+	same external resource on subsequent mentions in a single document.

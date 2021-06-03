@@ -27,9 +27,9 @@ can seek help in several ways:
 
 -   Ask a question on [Stack Overflow](https://stackoverflow.com/questions/tagged/substrate)
 -   Ask a question in the
-    [Substrate Technical Element channel](https://app.element.io/#/room/!HzySYSaIhtyWrwiwEV:matrix.org)
+		[Substrate Technical Element channel](https://app.element.io/#/room/!HzySYSaIhtyWrwiwEV:matrix.org)
 -   Open a [new issue](https://github.com/substrate-developer-hub/recipes/issues/new) against this
-    repository
+		repository
 
 ## Prerequisites
 
@@ -67,7 +67,7 @@ If you haven't already, you should clone it now. There are five primary director
 -   **Pallets**: Pallets for use in FRAME-based runtimes.
 -   **Runtimes**: Runtimes for use in Substrate nodes.
 -   **Text**: Source of [the book](https://substrate.dev/recipes) written in markdown. This is what
-    you're reading right now.
+		you're reading right now.
 
 Exploring those directories reveals a tree that looks like this
 
@@ -75,10 +75,10 @@ Exploring those directories reveals a tree that looks like this
 recipes
 |
 +-- consensus
-  |
-  +-- manual-seal
-  |
-  +-- sha3pow
+	|
+	+-- manual-seal
+	|
+	+-- sha3pow
 |
 +-- nodes
 	|

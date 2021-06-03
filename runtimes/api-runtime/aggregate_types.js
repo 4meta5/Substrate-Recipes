@@ -7,23 +7,23 @@ const fs = require('fs');
 // Does not include system pallets because Apps already supports them.
 // Redundant with construct_runtime!
 const pallets = [
-  "sum-storage",
+	"sum-storage",
 ]
 
 // Types that are native to the runtime itself (ie come from lib.rs)
 // These specifics are from https://polkadot.js.org/api/start/types.extend.html#impact-on-extrinsics
 const runtimeOwnTypes = {
-  "Address": "AccountId",
-  "LookupSource": "AccountId"
+	"Address": "AccountId",
+	"LookupSource": "AccountId"
 }
 
 // Loop through all pallets aggregating types
 let finalTypes = runtimeOwnTypes;
 let palletTypes;
 for (let dirname of pallets) {
-  let path = `../../pallets/${dirname}/types.json`;
-  palletTypes = JSON.parse(fs.readFileSync(path, 'utf8'));
-  finalTypes = {...finalTypes, ...palletTypes};
+	let path = `../../pallets/${dirname}/types.json`;
+	palletTypes = JSON.parse(fs.readFileSync(path, 'utf8'));
+	finalTypes = {...finalTypes, ...palletTypes};
 }
 
 // Write output to disk

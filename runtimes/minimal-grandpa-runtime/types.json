@@ -1,6 +1,6 @@
 {
-  "Address": "AccountId",
-  "LookupSource": "AccountId",
-  "Weight": "u32",
-  "AccountInfo": "AccountInfoWithDualRefCount"
+	"Address": "AccountId",
+	"LookupSource": "AccountId",
+	"Weight": "u32",
+	"AccountInfo": "AccountInfoWithDualRefCount"
 }

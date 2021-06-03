@@ -106,7 +106,10 @@ fn deposit_withdraw_discrete_works() {
 fn discrete_interest_works() {
 	ExternalityBuilder::build().execute_with(|| {
 		// Deposit 100 tokens
-		assert_ok!(CompoundingInterest::deposit_discrete(Origin::signed(1), 100));
+		assert_ok!(CompoundingInterest::deposit_discrete(
+			Origin::signed(1),
+			100
+		));
 
 		// balance should not change after the 3rd block
 		CompoundingInterest::on_finalize(3);

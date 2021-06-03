@@ -28,8 +28,8 @@ sum-storage-runtime-api = { version = "2.0.0", path = "../runtime-api", default-
 [features]
 default = ["std"]
 std = [
-  "serde",
-  "sp-api/std",
-  "sp-runtime/std",
-  "sum-storage-runtime-api/std"
+	"serde",
+	"sp-api/std",
+	"sp-runtime/std",
+	"sum-storage-runtime-api/std"
 ]

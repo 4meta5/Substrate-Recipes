@@ -38,22 +38,22 @@ const ONCHAIN_TX_KEY: &[u8] = b"ocw-demo::storage::tx";
 // -- snip --
 
 pub fn submit_number_signed(origin, number: u64) -> DispatchResult {
-  // -- snip --
-  let key = Self::derived_key(frame_system::Module::<T>::block_number());
-  let data = IndexingData(b"submit_number_unsigned".to_vec(), number);
-  offchain_index::set(&key, &data.encode());
+	// -- snip --
+	let key = Self::derived_key(frame_system::Module::<T>::block_number());
+	let data = IndexingData(b"submit_number_unsigned".to_vec(), number);
+	offchain_index::set(&key, &data.encode());
 }
 
 impl<T: Config> Module<T> {
-  fn derived_key(block_number: T::BlockNumber) -> Vec<u8> {
-    block_number.using_encoded(|encoded_bn| {
-      ONCHAIN_TX_KEY.clone().into_iter()
-        .chain(b"/".into_iter())
-        .chain(encoded_bn)
-        .copied()
-        .collect::<Vec<u8>>()
-    })
-  }
+	fn derived_key(block_number: T::BlockNumber) -> Vec<u8> {
+		block_number.using_encoded(|encoded_bn| {
+			ONCHAIN_TX_KEY.clone().into_iter()
+				.chain(b"/".into_iter())
+				.chain(encoded_bn)
+				.copied()
+				.collect::<Vec<u8>>()
+		})
+	}
 }
 ```
 
@@ -72,21 +72,21 @@ src: [`pallets/ocw-demo/src/lib.rs`](https://github.com/substrate-developer-hub/
 
 ```rust
 fn offchain_worker(block_number: T::BlockNumber) {
-  // -- snip --
+	// -- snip --
 
-  // Reading back the off-chain indexing value. It is exactly the same as reading from
-  // ocw local storage.
-  let key = Self::derived_key(block_number);
-  let oci_mem = StorageValueRef::persistent(&key);
+	// Reading back the off-chain indexing value. It is exactly the same as reading from
+	// ocw local storage.
+	let key = Self::derived_key(block_number);
+	let oci_mem = StorageValueRef::persistent(&key);
 
-  if let Some(Some(data)) = oci_mem.get::<IndexingData>() {
-    debug::info!("off-chain indexing data: {:?}, {:?}",
-      str::from_utf8(&data.0).unwrap_or("error"), data.1);
-  } else {
-    debug::info!("no off-chain indexing data retrieved.");
-  }
+	if let Some(Some(data)) = oci_mem.get::<IndexingData>() {
+		debug::info!("off-chain indexing data: {:?}, {:?}",
+			str::from_utf8(&data.0).unwrap_or("error"), data.1);
+	} else {
+		debug::info!("no off-chain indexing data retrieved.");
+	}
 
-  // -- snip --
+	// -- snip --
 }
 ```
 

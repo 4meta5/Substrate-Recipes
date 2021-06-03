@@ -1,7 +1,7 @@
 {
-    "ValueStruct": {
-        "integer": "i32",
-        "boolean": "bool"
-    },
-    "BufferIndex": "u8"
+	"ValueStruct": {
+		"integer": "i32",
+		"boolean": "bool"
+	},
+	"BufferIndex": "u8"
 }

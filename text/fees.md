@@ -14,13 +14,13 @@ calculating and collecting fees for executing transactions. Fees are broken down
 components:
 
 -   Byte fee - A fee proportional to the transaction's length in bytes. The proportionality constant
-    is a parameter in the `transaction_payment` pallet.
+	is a parameter in the `transaction_payment` pallet.
 -   Weight fee - A fee calculated from the transaction's weight. Weights quantify the time spent
-    executing the transaction. Learn more in the [recipe on weights](./weights.md). The conversion
-    doesn't need to be linear, although it often is. The same conversion function is applied across
-    all transactions from all pallets in the runtime.
+	executing the transaction. Learn more in the [recipe on weights](./weights.md). The conversion
+	doesn't need to be linear, although it often is. The same conversion function is applied across
+	all transactions from all pallets in the runtime.
 -   Fee Multiplier - A multiplier for the computed fee, that can change as the chain progresses.
-    This topic is not (yet) covered further in the recipes.
+	This topic is not (yet) covered further in the recipes.
 
 ```
 total_fee = transaction_length * length_fee + weight_to_fee(total_weight)

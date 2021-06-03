@@ -1,5 +1,5 @@
 {
-  "Address": "AccountId",
-  "LookupSource": "AccountId",
-  "AccountInfo": "AccountInfoWithDualRefCount",
+	"Address": "AccountId",
+	"LookupSource": "AccountId",
+	"AccountInfo": "AccountInfoWithDualRefCount",
 }

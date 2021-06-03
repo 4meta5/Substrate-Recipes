@@ -152,7 +152,7 @@ The next line demonstrates using `debug::info!` macro to log to the screen and a
 variable's content. The syntax inside the macro is very similar to what regular rust macro
 `println!` takes.
 
-You can specify the logger target with 
+You can specify the logger target with
 ```rust, ignore
 debug::debug!(target: "mytarget", "called by {:?}", sender);
 ```

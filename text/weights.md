@@ -71,18 +71,18 @@ and [`PaysFee`](https://substrate.dev/rustdocs/v3.0.0/frame_support/weights/trai
 
 ```rust, ignore
 impl<T> ClassifyDispatch<T> for Conditional {
-    fn classify_dispatch(&self, _: T) -> DispatchClass {
-        // Classify all calls as Normal (which is the default)
-        Default::default()
-    }
+	fn classify_dispatch(&self, _: T) -> DispatchClass {
+		// Classify all calls as Normal (which is the default)
+		Default::default()
+	}
 }
 ```
 
 ```rust, ignore
 impl PaysFee for Conditional {
-    fn pays_fee(&self) -> bool {
-        true
-    }
+	fn pays_fee(&self) -> bool {
+		true
+	}
 }
 ```
 

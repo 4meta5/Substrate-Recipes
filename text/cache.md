@@ -104,16 +104,16 @@ the compiler returns the following error:
 
 ```bash
 error[E0382]: use of moved value: `existing_king`
-  --> src/lib.rs:93:63
-   |
+	--> src/lib.rs:93:63
+	|
 80 |             let existing_king = <KingMember<T>>::get();
-   |                 ------------- move occurs because `existing_king` has type `<T as frame_system::Config>::AccountId`, which does not implement the `Copy` trait
+	|                 ------------- move occurs because `existing_king` has type `<T as frame_system::Config>::AccountId`, which does not implement the `Copy` trait
 ...
 85 |             ensure!(!Self::is_member(existing_king), "is a member so maintains priority");
-   |                                      ------------- value moved here
+	|                                      ------------- value moved here
 ...
 93 |             Self::deposit_event(RawEvent::InefficientKingSwap(existing_king, new_king));
-   |                                                               ^^^^^^^^^^^^^ value used here after move
+	|                                                               ^^^^^^^^^^^^^ value used here after move
 
 error: aborting due to previous error
 

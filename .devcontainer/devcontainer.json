@@ -1,17 +1,17 @@
 {
-  "name": "Substrate Recipes",
-  "dockerFile": "Dockerfile",
-  "settings": {
-    "terminal.integrated.shell.linux": "/bin/bash",
-    "lldb.executable": "/usr/bin/lldb"
-  },
-  "extensions": [
-    "rust-lang.rust",
-    "bungcip.better-toml",
-    "vadimcn.vscode-lldb"
-  ],
-  "forwardPorts": [
-    3000,
-    9944
-  ]
+	"name": "Substrate Recipes",
+	"dockerFile": "Dockerfile",
+	"settings": {
+		"terminal.integrated.shell.linux": "/bin/bash",
+		"lldb.executable": "/usr/bin/lldb"
+	},
+	"extensions": [
+		"rust-lang.rust",
+		"bungcip.better-toml",
+		"vadimcn.vscode-lldb"
+	],
+	"forwardPorts": [
+		3000,
+		9944
+	]
 }

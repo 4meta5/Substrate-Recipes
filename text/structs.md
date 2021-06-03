@@ -20,8 +20,8 @@ To define a _simple_ custom struct for the runtime, the following syntax may be 
 ```rust, ignore
 #[derive(Encode, Decode, Default, Clone, PartialEq)]
 pub struct MyStruct {
-    some_number: u32,
-    optional_number: Option<u32>,
+	some_number: u32,
+	optional_number: Option<u32>,
 }
 ```
 

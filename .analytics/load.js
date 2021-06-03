@@ -6,8 +6,8 @@ gtagScript.async = true;
 gtagScript.type = "opt-in";
 gtagScript.setAttribute("data-type", "application/javascript");
 gtagScript.setAttribute(
-  "data-src",
-  "https://www.googletagmanager.com/gtag/js?id=UA-145158313-2"
+	"data-src",
+	"https://www.googletagmanager.com/gtag/js?id=UA-145158313-2"
 );
 gtagScript.setAttribute("data-name", "googleAnalytics");
 head.appendChild(gtagScript);
@@ -17,7 +17,7 @@ dataLayerScript.type = "opt-in";
 dataLayerScript.text = `
 window.dataLayer = window.dataLayer || [];
 function gtag(){
-  dataLayer.push(arguments);
+	dataLayer.push(arguments);
 }
 gtag('js', new Date());
 gtag('config', 'UA-145158313-2');

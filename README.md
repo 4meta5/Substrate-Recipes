@@ -17,7 +17,7 @@ Ready to roll up your sleeves and cook some blockchain? Read the book online at
 There are five primary directories in this repository:
 
 -   **Text**: Source of [the book](https://substrate.dev/recipes) written in markdown. This text
-    describes the code in the other three directories.
+	describes the code in the other three directories.
 -   **Pallets**: Pallets for use in FRAME-based runtimes.
 -   **Runtimes**: Runtimes for use in Substrate nodes.
 -   **Consensus**: Consensus engines for use in Substrate nodes.

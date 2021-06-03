@@ -139,11 +139,11 @@ One widely available option is `curl`.
 
 ```bash
 $ curl http://localhost:9933 -H "Content-Type:application/json;charset=utf-8" -d   '{
-     "jsonrpc":"2.0",
-      "id":1,
-      "method":"silly_seven",
-      "params": []
-    }'
+		"jsonrpc":"2.0",
+			"id":1,
+			"method":"silly_seven",
+			"params": []
+		}'
 ```
 
 To which the RPC responds
@@ -157,11 +157,11 @@ parameter by including its in the `params` list. For example:
 
 ```bash
 $ curl http://localhost:9933 -H "Content-Type:application/json;charset=utf-8" -d   '{
-     "jsonrpc":"2.0",
-      "id":1,
-      "method":"silly_double",
-      "params": [7]
-    }'
+		"jsonrpc":"2.0",
+			"id":1,
+			"method":"silly_double",
+			"params": [7]
+		}'
 ```
 
 To which the RPC responds with the doubled parameter
@@ -271,11 +271,11 @@ block.
 
 ```bash
 $ curl http://localhost:9933 -H "Content-Type:application/json;charset=utf-8" -d   '{
-     "jsonrpc":"2.0",
-      "id":1,
-      "method":"sumStorage_getSum",
-      "params": []
-    }'
+		"jsonrpc":"2.0",
+			"id":1,
+			"method":"sumStorage_getSum",
+			"params": []
+		}'
 ```
 
 We may also call the RPC by providing a block hash. One easy way to get a block hash to test this
@@ -283,11 +283,11 @@ call is by copying it from the logs of a running node.
 
 ```bash
 $ curl http://localhost:9933 -H "Content-Type:application/json;charset=utf-8" -d   '{
-     "jsonrpc":"2.0",
-      "id":1,
-      "method":"sumStorage_getSum",
-      "params": ["0x87b2e4b93e74d2f06a0bde8de78c9e2a9823ce559eb5e3c4710de40a1c1071ac"]
-    }'
+		"jsonrpc":"2.0",
+			"id":1,
+			"method":"sumStorage_getSum",
+			"params": ["0x87b2e4b93e74d2f06a0bde8de78c9e2a9823ce559eb5e3c4710de40a1c1071ac"]
+		}'
 ```
 
 As an exercise, change the storage values and confirm that the RPC provides the correct updated sum.
@@ -332,11 +332,11 @@ It can also be called using `curl` as described previously.
 
 ```bash
 $ curl http://localhost:9933 -H "Content-Type:application/json;charset=utf-8" -d   '{
-     "jsonrpc":"2.0",
-      "id":1,
-      "method":"engine_createBlock",
-      "params": [true, false, null]
-    }'
+		"jsonrpc":"2.0",
+			"id":1,
+			"method":"engine_createBlock",
+			"params": [true, false, null]
+		}'
 ```
 
 This call takes three parameters, each of which are worth exploring.
@@ -370,11 +370,11 @@ second provided RPC call, `engine_finalizeBlock`.
 
 ```bash
 $ curl http://localhost:9933 -H "Content-Type:application/json;charset=utf-8" -d   '{
-     "jsonrpc":"2.0",
-      "id":1,
-      "method":"engine_finalizeBlock",
-      "params": ["0x0e0626477621754200486f323e3858cd5f28fcbe52c69b2581aecb622e384764", null]
-    }'
+		"jsonrpc":"2.0",
+			"id":1,
+			"method":"engine_finalizeBlock",
+			"params": ["0x0e0626477621754200486f323e3858cd5f28fcbe52c69b2581aecb622e384764", null]
+		}'
 ```
 
 The two parameters are:

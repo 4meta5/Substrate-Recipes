@@ -30,12 +30,12 @@ src:
 // Initialize seed for signing transaction using off-chain workers
 #[cfg(feature = "ocw")]
 {
-  sp_keystore::SyncCryptoStore::sr25519_generate_new(
-    &*keystore,
-    runtime::ocw_demo::KEY_TYPE,
-    Some("//Alice"),
-  )
-  .expect("Creating key with account Alice should succeed.");
+	sp_keystore::SyncCryptoStore::sr25519_generate_new(
+		&*keystore,
+		runtime::ocw_demo::KEY_TYPE,
+		Some("//Alice"),
+	)
+	.expect("Creating key with account Alice should succeed.");
 }
 ```
 
@@ -150,7 +150,7 @@ pub trait Config: frame_system::Config + CreateSignedTransaction<Call<Self>> {
 ### Setup: Runtime `ocw-runtime`
 
 Going back to our runtime `ocw-runtime`, in addition of implementing the pallet
- configuration trait `ocw_demo::Config`, we also implement 
+ configuration trait `ocw_demo::Config`, we also implement
  `frame_system::offchain::CreateSignedTransaction`,
 `frame_system::offchain::SigningTypes`, and `frame_system::offchain::SendTransactionTypes`.
 
@@ -161,9 +161,9 @@ src:
 pub type SignedPayload = generic::SignedPayload<Call, SignedExtra>;
 
 impl ocw_demo::Config for Runtime {
-  type AuthorityId = ocw_demo::crypto::TestAuthId;
-  type Call = Call;
-  type Event = Event;
+	type AuthorityId = ocw_demo::crypto::TestAuthId;
+	type Call = Call;
+	type Event = Event;
 }
 
 impl<LocalCall> frame_system::offchain::CreateSignedTransaction<LocalCall> for Runtime
@@ -225,16 +225,16 @@ src:
 
 ```rust
 impl frame_system::offchain::SigningTypes for Runtime {
-  type Public = <Signature as sp_runtime::traits::Verify>::Signer;
-  type Signature = Signature;
+	type Public = <Signature as sp_runtime::traits::Verify>::Signer;
+	type Signature = Signature;
 }
 
 impl<C> frame_system::offchain::SendTransactionTypes<C> for Runtime
 where
-  Call: From<C>,
+	Call: From<C>,
 {
-  type OverarchingCall = Call;
-  type Extrinsic = UncheckedExtrinsic;
+	type OverarchingCall = Call;
+	type Extrinsic = UncheckedExtrinsic;
 }
 ```
 
@@ -340,13 +340,13 @@ The `ValidTransaction` object contains certain fields:
 - `priority`: determine the ordering of two transactions, given their dependencies are satisfied.
 - `provides`: contain a list of tags provided by this transaction. Successfully importing the
 	transaction will enable other transactions that depend on these tags be included. Using both `provides`
-  and `requires` tags allow Substrate to build a dependency graph of transactions and import them in
-  the right order.
+	and `requires` tags allow Substrate to build a dependency graph of transactions and import them in
+	the right order.
 - `longevity`: this transaction longevity describes the minimum number of blocks the transaction
-  has to be valid for. After this period the transaction should be removed from the pool or revalidated.
+	has to be valid for. After this period the transaction should be removed from the pool or revalidated.
 - `propagate`: indicate if the transaction should be propagated to other peers. By setting to
-  `false` the transaction will still be considered for inclusion in blocks on
-  the current node but will never be sent to other peers.
+	`false` the transaction will still be considered for inclusion in blocks on
+	the current node but will never be sent to other peers.
 
 ### Setup: Runtime `ocw-runtime`
 
@@ -435,10 +435,10 @@ fn offchain_unsigned_tx_signed_payload(block_number: T::BlockNumber) -> Result<(
 			<Error<T>>::OffchainUnsignedTxSignedPayloadError
 		});
 	} else {
-    // The case of `None`: no account is available for sending
-    debug::error!("No local account available");
-    Err(<Error<T>>::NoLocalAcctForSigning)
-  }
+		// The case of `None`: no account is available for sending
+		debug::error!("No local account available");
+		Err(<Error<T>>::NoLocalAcctForSigning)
+	}
 }
 ```
 

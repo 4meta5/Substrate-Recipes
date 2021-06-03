@@ -93,9 +93,9 @@ straight-forward as it merely calls the pallet's helper function that we wrote p
 
 ```rust
 impl_runtime_apis! {
-  // --snip--
+	// --snip--
 
-  impl sum_storage_rpc_runtime_api::SumStorageApi<Block> for Runtime {
+	impl sum_storage_rpc_runtime_api::SumStorageApi<Block> for Runtime {
 		fn get_sum() -> u32 {
 			SumStorage::get_sum()
 		}

@@ -1,12 +1,12 @@
 {
   "InnerThing": {
-      "number": "u32",
-      "hash": "Hash",
-      "balance": "Balance"
+	"number": "u32",
+	"hash": "Hash",
+	"balance": "Balance"
   },
   "SuperThing": {
-      "super_number": "u32",
-      "inner_thing": "InnerThing"
+	"super_number": "u32",
+	"inner_thing": "InnerThing"
   },
   "InnerThingOf": "InnerThing"
 }

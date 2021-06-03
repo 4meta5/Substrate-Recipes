@@ -30,11 +30,11 @@ have:
 -   `SimpleMap` - the name of the storage map
 -   `get(fn simple_map)` - the name of a getter function that will return values from the map.
 -   `: map hasher(blake2_128_concat)` - beginning of the type declaration. This is a map and it will
-    use the
-    [`blake2_128_concat`](https://substrate.dev/rustdocs/v3.0.0/frame_support/trait.Hashable.html#tymethod.blake2_128_concat)
-    hasher. More on this below.
+	use the
+	[`blake2_128_concat`](https://substrate.dev/rustdocs/v3.0.0/frame_support/trait.Hashable.html#tymethod.blake2_128_concat)
+	hasher. More on this below.
 -   `T::AccountId => u32` - The specific key and value type of the map. This is a map from
-    `AccountId`s to `u32`s.
+	`AccountId`s to `u32`s.
 
 ## Choosing a Hasher
 
