@@ -156,8 +156,8 @@ Having seen that the Kitchen Node depends on a runtime, let us now look deeper a
 # -- snip --
 
 # Substrate Pallets
-balances = { package = 'pallet-balances', , ... }
-transaction-payment = { package = 'pallet-transaction-payment', ,... }
+pallet-balances = { version = '3.0', default-features = false }
+pallet-transaction-payment = { version = '3.0', default-features = false }
 # Recipe Pallets
 adding-machine = { path = "../../pallets/adding-machine", default-features = false }
 basic-token = { path = "../../pallets/basic-token", default-features = false }
