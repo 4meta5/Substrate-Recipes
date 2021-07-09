@@ -17,7 +17,7 @@ construct_runtime!(
 		UncheckedExtrinsic = UncheckedExtrinsic,
 	{
 		System: frame_system::{Module, Call, Config, Storage, Event<T>},
-		SumStorage: sum_storage::{Module, Call, Storage, Event},
+		SumStorage: sum_storage::{Module, Call, Storage, Event<T>},
 	}
 );
 

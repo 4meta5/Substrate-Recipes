@@ -1,10 +1,10 @@
 # Custom RPCs
 
 `nodes/custom-rpc`
-<a target="_blank" href="https://playground.substrate.dev/?deploy=recipes&files=%2Fhome%2Fsubstrate%2Fworkspace%2Fnodes%2Frpc-node%2Fsrc%2Fservice.rs">
+<a target="_blank" href="https://playground.substrate.dev/?deploy=recipes&files=%2Fhome%2Fsubstrate%2Fworkspace%2Fnodes%2Frpc-node%2Fsrc%2Fsilly_rpc.rs">
 	<img src="https://img.shields.io/badge/Playground-Try%20it!-brightgreen?logo=Parity%20Substrate" alt ="Try on playground"/>
 </a>
-<a target="_blank" href="https://github.com/substrate-developer-hub/recipes/tree/master/nodes/rpc-node/src/service.rs">
+<a target="_blank" href="https://github.com/substrate-developer-hub/recipes/tree/master/nodes/rpc-node/src/silly_rpc.rs">
 	<img src="https://img.shields.io/badge/Github-View%20Code-brightgreen?logo=github" alt ="View on GitHub"/>
 </a>
 

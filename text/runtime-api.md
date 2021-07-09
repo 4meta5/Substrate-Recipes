@@ -31,12 +31,13 @@ recipe, we will write our own minimal runtime API.
 For this example, we will write a pallet called `sum-storage` with two storage items, both `u32`s.
 
 ```rust
-decl_storage! {
-	trait Store for Module<T: Config> as TemplateModule {
-		Thing1 get(fn thing1): Option<u32>;
-		Thing2 get(fn thing2): Option<u32>;
-	}
-}
+	#[pallet::storage]
+	#[pallet::getter(fn thing1)]
+	pub type Thing1<T: Config> = StorageValue<_, u32, ValueQuery>;
+
+	#[pallet::storage]
+	#[pallet::getter(fn thing2)]
+	pub type Thing2<T: Config> = StorageValue<_, u32, ValueQuery>;
 ```
 
 Substrate already comes with a runtime API for querying storage values, which is why we can easily
@@ -46,9 +47,9 @@ API will provide a way for the outer node to query the runtime for this sum. Bef
 actual runtime API, let's write a public helper function in the pallet to do the summing.
 
 ```rust
-impl<T: Config> Module<T> {
+impl<T: Config> Pallet<T> {
 	pub fn get_sum() -> u32 {
-		Thing1::get() + Thing2::get()
+		Thing1::<T>::get() + Thing2::<T>::get()
 	}
 }
 ```
